@@ -1,9 +1,11 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+// Import components from Gatsby and plugins Gatsby
+import { Link, graphql } from "gatsby"
+import { getImage } from "gatsby-plugin-image"
+
+// Import Components for App
+import { Layout, Hero, Title, Seo } from "components"
 
 const links = [
   {
@@ -68,48 +70,66 @@ const moreLinks = [
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
-const IndexPage = () => (
-  <Layout>
-    <div>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
+// GraphQl Queries
+export const query = graphql`
+  {
+    file(relativePath: { eq: "Le_jardin.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          formats: [AUTO, WEBP]
+          jpgOptions: { progressive: true }
+        )
+      }
+      name
+    }
+  }
+`
+
+// Component
+const IndexPage = ({ data }) => {
+  // Component Variables
+  const image = getImage(data.file)
+  const imageAlt = data.file.name
+  // Render Component
+  return (
+    <Layout>
+      <Hero home bgImagePath={image} altBgImage={imageAlt}>
+        <Title tag="h1" title="Garderie Les P'tits Loups" />
+      </Hero>
+      <div>
+        <h1>
+          Welcome to <b>Gatsby!</b>
+        </h1>
+        <p>
+          <b>Example pages:</b>{" "}
+          {samplePageLinks.map((link, i) => (
+            <React.Fragment key={link.url}>
+              <Link to={link.url}>{link.text}</Link>
+              {i !== samplePageLinks.length - 1 && <> · </>}
+            </React.Fragment>
+          ))}
+          <br />
+          Edit <code>src/pages/index.js</code> to update this page.
+        </p>
+      </div>
+      <ul>
+        {links.map(link => (
+          <li key={link.url}>
+            <a href={`${link.url}${utmParameters}`}>{link.text} ↗</a>
+            <p>{link.description}</p>
+          </li>
         ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul>
-      {links.map(link => (
-        <li key={link.url}>
-          <a href={`${link.url}${utmParameters}`}>{link.text} ↗</a>
-          <p>{link.description}</p>
-        </li>
+      </ul>
+      {moreLinks.map((link, i) => (
+        <React.Fragment key={link.url}>
+          <a href={`${link.url}${utmParameters}`}>{link.text}</a>
+          {i !== moreLinks.length - 1 && <> · </>}
+        </React.Fragment>
       ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
+    </Layout>
+  )
+}
 
 /**
  * Head export to define metadata for the page
