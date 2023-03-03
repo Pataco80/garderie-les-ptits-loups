@@ -119,4 +119,4 @@ coverage
 .eslintcache
 // files for small various informations
 info.txt
-.elements
+.elements/
