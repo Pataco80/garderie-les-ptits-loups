@@ -1,3 +1,8 @@
+const path = require("path")
+// Initialize dotenv
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`, // or '.env'
+})
 /**
  * Configure your Gatsby site with this file.
  *
@@ -15,13 +20,41 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-root-import`,
+      options: {
+        src: path.join(__dirname, `src`),
+        components: path.join(__dirname, `src/components`),
+        theme: path.join(__dirname, `src/theme`),
+        pages: path.join(__dirname, `src/pages`),
+        hooks: path.join(__dirname, `src/hooks`),
+        styledElements: path.join(__dirname, `src/components/styledElements`),
+        images: path.join(__dirname, `src/images`),
+      },
+    },
     `gatsby-plugin-image`,
+    `gatsby-plugin-preload-fonts`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: false,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
+      },
+      __key: "pages",
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+      __key: "images",
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -39,5 +72,6 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-sitemap`,
   ],
 }

@@ -1,8 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import { Layout, Seo } from "components"
 
 const UsingSSR = ({ serverData }) => {
   return (
@@ -32,7 +31,7 @@ const UsingSSR = ({ serverData }) => {
   )
 }
 
-export const Head = () => <Seo title="Using SSR" />
+//export const Head = () => <Seo title="Using SSR" />
 
 export default UsingSSR
 

@@ -1,11 +1,9 @@
 import * as React from "react"
 
-// Import components from Gatsby and plugins Gatsby
+// Import Components for App
 import { Link, graphql } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
-
-// Import Components for App
-import { Layout, Hero, Title, Seo } from "components"
+import { Layout, Seo, Hero, Title } from "components"
 
 const links = [
   {
@@ -69,7 +67,6 @@ const moreLinks = [
 ]
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
-
 // GraphQl Queries
 export const query = graphql`
   {
@@ -85,17 +82,24 @@ export const query = graphql`
     }
   }
 `
-
 // Component
 const IndexPage = ({ data }) => {
-  // Component Variables
-  const image = getImage(data.file)
-  const imageAlt = data.file.name
-  // Render Component
+  console.log(data)
+  // Component variables
+
+  //const image = getImage(data.file)
+  //const imageAlt = data.file.name
+
   return (
     <Layout>
-      <Hero home bgImagePath={image} altBgImage={imageAlt}>
-        <Title tag="h1" title="Garderie Les P'tits Loups" />
+      <Hero
+        home
+        bgImagePath={image}
+        altBgImage={imageAlt}
+        tag="h1"
+        title="Garderie Les P'tits Loups"
+      >
+        <Title tag="h1">Garderie Les P'tits Loups</Title>
       </Hero>
       <div>
         <h1>
@@ -130,12 +134,11 @@ const IndexPage = ({ data }) => {
     </Layout>
   )
 }
-
 /**
  * Head export to define metadata for the page
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Home" />
+//export const Head = () => <Seo title="Home" />
 
 export default IndexPage

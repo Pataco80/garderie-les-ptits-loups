@@ -5,16 +5,27 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
+    "dotenv": "^16.0.3",
     "gatsby": "^5.7.0",
     "gatsby-plugin-image": "^3.7.0",
     "gatsby-plugin-manifest": "^5.7.0",
+    "gatsby-plugin-preload-fonts": "^4.7.0",
     "gatsby-plugin-sharp": "^5.7.0",
+    "gatsby-plugin-sitemap": "^6.7.0",
+    "gatsby-plugin-styled-components": "^6.7.0",
     "gatsby-source-filesystem": "^5.7.0",
     "gatsby-transformer-sharp": "^5.7.0",
+    "path": "^0.12.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6",
+    "styled-icons": "^10.47.0",
+    "styled-media-query": "^2.1.2",
+    "styled-reset": "^4.4.5"
   },
   "devDependencies": {
+    "gatsby-plugin-root-import": "^2.0.9",
     "prettier": "^2.8.4"
   },
   "keywords": [
@@ -22,13 +33,15 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
     "start": "gatsby develop",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "preload-fonts": "gatsby-preload-fonts",
+    "refrech": "gatsby clean && gatsby develop",
+    "rebuild": "gatsby clean && gatsby build",
+    "production": "gatsby clean && gatsby build && gatsby serve"
   },
   "repository": {
     "type": "git",
