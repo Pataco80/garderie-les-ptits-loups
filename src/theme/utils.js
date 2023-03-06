@@ -27,7 +27,7 @@ export const googleFonts = css`
   @import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap");
 `
 export const setFont = {
-  headingsFont: `"Chelsea Market", cursive`,
+  headingsFont: `"Depica Kids"`,
   bodyFont: `"Open Sans", sans-serif`,
   defaultFonts: `"system",
   "-apple-system",
@@ -45,7 +45,7 @@ export const setPxToRem = (px = 16) => {
   return `${px / 16}rem`
 }
 
-export const setRem = (x) => {
+export const setRem = x => {
   return `${x}rem`
 }
 

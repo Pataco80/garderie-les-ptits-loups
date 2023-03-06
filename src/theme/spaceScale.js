@@ -1,9 +1,9 @@
 import { css } from "styled-components"
 const spaceScale = css`
-  /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1488,24,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  /* @link https://utopia.fyi/space/calculator?c=330,16,1.333,1364,24,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,NaN */
   :root {
-    --fluid-min-width: 320;
-    --fluid-max-width: 1488;
+    --fluid-min-width: 330;
+    --fluid-max-width: 1364;
 
     --fluid-screen: 100vw;
     --fluid-bp: calc(
@@ -12,7 +12,7 @@ const spaceScale = css`
     );
   }
 
-  @media screen and (min-width: 1488px) {
+  @media screen and (min-width: 1364px) {
     :root {
       --fluid-screen: calc(var(--fluid-max-width) * 1px);
     }
@@ -28,7 +28,7 @@ const spaceScale = css`
     --fc-xs-min: (var(--fc-s-min) * 0.75);
     --fc-xs-max: (var(--fc-s-max) * 0.75);
 
-    --fc-s-min: (var(--f-0-min, 18));
+    --fc-s-min: (var(--f-0-min, 16));
     --fc-s-max: (var(--f-0-max, 24));
 
     --fc-m-min: (var(--fc-s-min) * 1.5);
