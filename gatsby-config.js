@@ -25,10 +25,10 @@ module.exports = {
       options: {
         src: path.join(__dirname, `src`),
         components: path.join(__dirname, `src/components`),
+        styledElements: path.join(__dirname, `src/components/StyledElements`),
         theme: path.join(__dirname, `src/theme`),
         pages: path.join(__dirname, `src/pages`),
         hooks: path.join(__dirname, `src/hooks`),
-        styledElements: path.join(__dirname, `src/components/styledElements`),
         images: path.join(__dirname, `src/images`),
       },
     },

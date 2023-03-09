@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 // Import helpers
-import { setFlex, setPxToRem, setColor } from "../../theme/utils"
+import { setFlex, setPxToRem, setColor } from "theme"
 
 // Export Styles for the component
 export const AppWrapper = styled.div`

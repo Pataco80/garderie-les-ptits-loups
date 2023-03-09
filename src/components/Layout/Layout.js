@@ -1,7 +1,7 @@
 import React from "react"
 
 // Import Components for App
-import { GlobalStyles } from "theme/index.js"
+import { GlobalStyles } from "theme"
 
 // Import styles from component styled file
 import * as S from "./LayoutStyled"

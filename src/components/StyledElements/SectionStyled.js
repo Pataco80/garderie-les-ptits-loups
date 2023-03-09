@@ -1,22 +1,22 @@
 import styled, { css } from "styled-components"
 
 // Import helpers
-import { layout, media, setColor } from "../../theme/utils"
+import { layout, media, setColor } from "theme"
 
 // Styled CSS
 const SectionCss = css`
-  background-color: ${(props) =>
+  background-color: ${props =>
     props.background ? props.background : `${setColor.white}`};
-  padding: ${(props) =>
+  padding: ${props =>
     props.padding ? props.padding : `var(--space-xl) var(--space-xs-s)`};
 
   ${media.greaterThan("tablet")`
-    padding: ${(props) =>
+    padding: ${props =>
       props.padding ? props.padding : `var(--space-2xl) var(--space-xl)`};
   `}
 
   ${media.greaterThan("desktop")`
-    padding: ${(props) => (props.padding ? props.padding : `5rem`)};
+    padding: ${props => (props.padding ? props.padding : `5rem`)};
   `}
 `
 
@@ -26,7 +26,7 @@ export const Section = styled.section`
   width: 100vw;
 `
 export const SectionContent = styled.div`
-  padding: ${(props) => (props.padding ? props.padding : `0`)};
+  padding: ${props => (props.padding ? props.padding : `0`)};
   width: 100%;
 `
 
@@ -38,6 +38,6 @@ export const SectionCenter = styled.section`
 
 export const SectionContentCenter = styled.div`
   ${layout()};
-  padding: ${(props) => (props.padding ? props.padding : `0`)};
+  padding: ${props => (props.padding ? props.padding : `0`)};
   width: 100%;
 `

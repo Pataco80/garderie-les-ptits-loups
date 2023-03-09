@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // Import Components for App
-import { GatsbyButtonLink } from "components"
+import { GatsbyButtonLink } from "styledElements"
 
 // Import styles from component styled file
 import * as S from "./HeroStyled"
