@@ -1,5 +1,6 @@
 import {
   setColor,
+  setFont,
   setPxToRem,
   setRem,
   media,
@@ -19,6 +20,7 @@ import GlobalStyles from "./globalStyles"
 export {
   GlobalStyles,
   setColor,
+  setFont,
   setPxToRem,
   setRem,
   media,

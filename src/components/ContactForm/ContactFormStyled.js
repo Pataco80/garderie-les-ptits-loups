@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components"
 
 // Import StyledElements for basic styles
-import { SectionContent } from "../StyledElements/SectionStyled"
+
+import { SectionContent } from "styledElements"
 
 // Import helpers
 import {
@@ -13,7 +14,7 @@ import {
   setColor,
   setShadow,
   setFont,
-} from "@helpers"
+} from "theme"
 
 // Styled CSS
 const ContactInput = css`
