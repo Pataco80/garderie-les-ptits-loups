@@ -3,7 +3,13 @@ import reset from "styled-reset"
 import fontScale from "./fontScale"
 import spaceScale from "./spaceScale.js"
 import gridScale from "./gridScale.js"
-import { setColor, googleFonts, setFont, setLetterSpacing } from "./utils"
+import {
+  setColor,
+  setShadow,
+  googleFonts,
+  setFont,
+  setLetterSpacing,
+} from "./utils"
 
 const GlobalStyles = createGlobalStyle`
 ${reset}
@@ -40,6 +46,7 @@ ${gridScale}
     color:${setColor.primary};
     ${setLetterSpacing(3.5)};
     font-weight: 900;
+    text-shadow:${setShadow("dark")};
   }
 
  h1, .h1, h2, .h2, h3, .h3{

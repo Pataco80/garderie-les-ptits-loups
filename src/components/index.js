@@ -2,6 +2,7 @@ import Layout from "./Layout/Layout"
 import Seo from "./seo"
 import Hero from "./Hero/Hero"
 import Title from "./Title/Title"
+import BlockInfo from "./BlockInfo/BlockInfo"
 import { BannerStyled, BannerStyledCenter } from "./StyledElements/BannerStyled"
 import {
   Button,
@@ -21,6 +22,7 @@ export {
   Seo,
   Hero,
   Title,
+  BlockInfo,
   BannerStyled,
   BannerStyledCenter,
   Button,

@@ -13,7 +13,7 @@ import * as S from "./HeroStyled"
 // Component
 const Hero = props => {
   // Component variables
-  const { home, bgImagePath, altBgImage, children } = props
+  const { home, bgImagePath, altBgImage, objectPosition, children } = props
   const image = getImage(bgImagePath)
   const altImage = altBgImage.replace("_", " ")
   // Render Component
@@ -25,7 +25,7 @@ const Hero = props => {
         layout="fullWidth"
         className="bgImageWrapper"
         imgClassName="bgImage"
-        objectPosition="0% 0%"
+        objectPosition={`${objectPosition}` || "50% 50%"}
       />
       <S.HeroContent padding="var(--space-m)">
         {children}

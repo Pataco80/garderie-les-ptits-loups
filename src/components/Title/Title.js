@@ -1,16 +1,24 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
 
 // Import styles from styled-components file and helpers
-import * as S from './TitleStyled'
+import * as S from "./TitleStyled"
 
 // Component
-const Title = (props) => {
-  const { title, tag: Tag, hidden, notShadow, children, className } = props
+const Title = props => {
+  const {
+    title,
+    className,
+    tag: Tag,
+    hidden,
+    notShadow,
+    children,
+    marBtm,
+  } = props
   // Render Component
   return (
-    <S.TitleWrapper hidden={hidden} notShadow={notShadow} className={className}>
-      <Tag>{title}</Tag>
+    <S.TitleWrapper hidden={hidden} notShadow={notShadow} marBtm={marBtm}>
+      <Tag className={className}>{title}</Tag>
       {children}
     </S.TitleWrapper>
   )
@@ -18,8 +26,8 @@ const Title = (props) => {
 
 // React PropTypes and more...
 Title.defaultProps = {
-  tag: 'h1',
-  title: 'Mon titre',
+  tag: "h1",
+  title: "Mon titre",
 }
 
 Title.propTypes = {

@@ -96,15 +96,15 @@ const ButtonStyles = css`
       (primary || secondary || primaryOutline) &&
       `
       color: ${setColor.secondary};
-      border: ${setBorder({ color: `${setColor.primaryDark}` })};
-      background: ${setColor.primaryDark};
+      border: ${setBorder({ color: `${setColor.primaryD10}` })};
+      background: ${setColor.primaryD10};
     `}
 
     ${({ outline }) =>
       outline &&
       `
       background: ${setColor.mainWhite};
-      color: ${setColor.primaryColorD1};
+      color: ${setColor.primaryD10};
     `}
   }
 `

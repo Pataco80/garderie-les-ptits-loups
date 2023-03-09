@@ -21,6 +21,7 @@ export const HeroWrapper = styled.section`
 `
 
 export const HeroContent = styled(SectionContentCenter)`
+  ${setFlex({ flex: "none" })};
   z-index: 2;
 `
 

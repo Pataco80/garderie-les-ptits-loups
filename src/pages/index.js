@@ -94,7 +94,12 @@ const IndexPage = ({ data }) => {
   // Render Component
   return (
     <Layout>
-      <Hero home bgImagePath={image} altBgImage={imageAlt}>
+      <Hero
+        home
+        bgImagePath={image}
+        altBgImage={imageAlt}
+        objectPosition="0% 100%"
+      >
         <Title tag="h1" title="Garderie Les P'tits Loups" />
       </Hero>
       <div>
