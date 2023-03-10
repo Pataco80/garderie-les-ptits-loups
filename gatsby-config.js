@@ -57,7 +57,12 @@ module.exports = {
       __key: "images",
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        base64: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
