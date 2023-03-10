@@ -2,7 +2,7 @@ import styled, { css } from "styled-components"
 
 // Import StyledElements for basic styles
 
-import { SectionContent } from "styledElements"
+import { Section, SectionContent } from "styledElements"
 
 // Import helpers
 import {
@@ -19,18 +19,16 @@ import {
 // Styled CSS
 const ContactInput = css`
   font-family: ${setFont.bodyFont};
-  font-size: 1rem;
+  font-size: var(--step--1);
   width: 100%;
-  padding: 1.5rem;
-  margin: 1rem 0 3rem;
+  padding: var(--space-xs-s);
+  margin: var(--space-xs) 0 var(--space-xs-m);
   ${setRadius({ allPx: 12 })};
   border: ${setBorder({
     size: 1,
     style: "solid",
-    color: setColor.primaryColor,
+    color: setColor.primary,
   })};
-  background: ${setColor.mainGreyL3};
-  box-shadow: ${setShadow("light")};
 
   &:focus {
     box-shadow: ${setShadow("light", { inset: "inset" })};
@@ -42,17 +40,25 @@ const ContactInput = css`
 `
 
 // Export Styles for the component
+export const FormSection = styled(Section)`
+  padding: var(--space-xl-2xl) var(--space-s-xl);
+`
+
 export const FormContainer = styled(SectionContent)`
   ${layout({ mW: 800 })};
   ${setFlex({ flDir: "column" })};
 `
 
 export const ContactForm = styled.form`
-  ${setFlex({ flDir: "column" })};
+  ${setFlex({ x: "space-between" })};
   width: 100%;
+
+  input[type="submit"] {
+    margin: 0 auto;
+  }
 `
 
-export const ContactInfo = styled.section`
+export const ContactInfo = styled.article`
   width: 100%;
 
   ${media.greaterThan("smTablet")`
@@ -66,6 +72,7 @@ export const ContactMessage = styled.section`
 
 export const InputWrapper = styled.div`
   width: 100%;
+  padding: var(--space-s) 0;
 
   ${media.greaterThan("smTablet")`
     width: 45%;
@@ -74,7 +81,9 @@ export const InputWrapper = styled.div`
 
 export const Label = styled.label`
   font-family: ${setFont.headingsFont};
-  color: ${setColor.primaryColor};
+  color: ${setColor.primary};
+  font-size: var(--step-1);
+  line-height: 0;
 `
 
 export const Input = styled.input`

@@ -8,7 +8,7 @@ const SectionCss = css`
   background-color: ${props =>
     props.background ? props.background : `${setColor.white}`};
   padding: ${props =>
-    props.padding ? props.padding : `var(--space-xl) var(--space-xs-s)`};
+    props.padding ? props.padding : `var(--space-xl) var(--space-s)`};
 
   ${media.greaterThan("tablet")`
     padding: ${props =>

@@ -123,6 +123,18 @@ const spaceScale = css`
       ((var(--fc-s-min) / 16) * 1rem) + (var(--fc-l-max) - var(--fc-s-min)) *
         var(--fluid-bp)
     );
+    --space-m-3xl: calc(
+      ((var(--fc-m-min) / 16) * 1rem) + (var(--fc-3xl-max) - var(--fc-m-min)) *
+        var(--fluid-bp)
+    );
+    --space-xs-m: calc(
+      ((var(--fc-xs-min) / 16) * 1rem) + (var(--fc-m-max) - var(--fc-xs-min)) *
+        var(--fluid-bp)
+    );
+    --space-s-xl: calc(
+      ((var(--fc-s-min) / 16) * 1rem) + (var(--fc-xl-max) - var(--fc-s-min)) *
+        var(--fluid-bp)
+    );
   }
 `
 export default spaceScale

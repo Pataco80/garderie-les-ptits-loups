@@ -5,7 +5,15 @@ import { Link, graphql } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
 
 // Import Components for App
-import { Layout, Hero, Title, BlockInfo, Seo, ContactForm } from "components"
+import {
+  Layout,
+  Hero,
+  Title,
+  BlockInfo,
+  Seo,
+  ContactForm,
+  ContactInfo,
+} from "components"
 
 // GraphQl Queries
 export const query = graphql`
@@ -43,6 +51,7 @@ const contactPage = ({ data }) => {
         </BlockInfo>
       </Hero>
       <ContactForm />
+      <ContactInfo />
       <p>Welcome to page 2</p>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
