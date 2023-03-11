@@ -34,6 +34,7 @@ module.exports = {
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-preload-fonts`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
