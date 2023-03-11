@@ -25,15 +25,16 @@ module.exports = {
       options: {
         src: path.join(__dirname, `src`),
         components: path.join(__dirname, `src/components`),
+        styledElements: path.join(__dirname, `src/components/StyledElements`),
         theme: path.join(__dirname, `src/theme`),
         pages: path.join(__dirname, `src/pages`),
         hooks: path.join(__dirname, `src/hooks`),
-        styledElements: path.join(__dirname, `src/components/styledElements`),
         images: path.join(__dirname, `src/images`),
       },
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-preload-fonts`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -57,7 +58,12 @@ module.exports = {
       __key: "images",
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        base64: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

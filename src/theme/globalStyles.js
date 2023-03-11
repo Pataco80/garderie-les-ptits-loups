@@ -3,7 +3,13 @@ import reset from "styled-reset"
 import fontScale from "./fontScale"
 import spaceScale from "./spaceScale.js"
 import gridScale from "./gridScale.js"
-import { setColor, googleFonts, setFont, setLetterSpacing } from "./utils"
+import {
+  setColor,
+  setShadow,
+  googleFonts,
+  setFont,
+  setLetterSpacing,
+} from "./utils"
 
 const GlobalStyles = createGlobalStyle`
 ${reset}
@@ -11,6 +17,14 @@ ${googleFonts}
 ${fontScale}
 ${spaceScale}
 ${gridScale}
+
+@font-face {
+  font-family:"Depica Kids" ;
+    font-weight: 900;
+  font-display: swap;
+  font-style: bold;
+  src:url(/fonts/Depica-Kids.woff) format('woff');
+}
 
 
   *, *:before, *:after {
@@ -28,9 +42,11 @@ ${gridScale}
   }
 
   h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-    font-family: ${setFont.headingsFont};
+    font-family: "Depica Kids";
     color:${setColor.primary};
     ${setLetterSpacing(3.5)};
+    font-weight: 900;
+    text-shadow:${setShadow("dark")};
   }
 
  h1, .h1, h2, .h2, h3, .h3{

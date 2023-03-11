@@ -1,7 +1,7 @@
 import styled from "styled-components"
 // Import helpers
-import { setFlex } from "../../theme/utils"
-import { SectionContentCenter } from "../StyledElements/SectionStyled"
+import { setFlex } from "theme"
+import { SectionContentCenter } from "styledElements"
 
 // Export Styles for the component
 export const HeroWrapper = styled.section`
@@ -21,6 +21,7 @@ export const HeroWrapper = styled.section`
 `
 
 export const HeroContent = styled(SectionContentCenter)`
+  ${setFlex({ flex: "none" })};
   z-index: 2;
 `
 

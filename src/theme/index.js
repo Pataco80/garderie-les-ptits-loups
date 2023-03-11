@@ -1,5 +1,6 @@
 import {
   setColor,
+  setFont,
   setPxToRem,
   setRem,
   media,
@@ -7,6 +8,7 @@ import {
   setFlex,
   setLinearBcg,
   setImgBcg,
+  convertHexToRGBA,
   setLetterSpacing,
   setBorder,
   setRadius,
@@ -18,6 +20,7 @@ import GlobalStyles from "./globalStyles"
 export {
   GlobalStyles,
   setColor,
+  setFont,
   setPxToRem,
   setRem,
   media,
@@ -25,6 +28,7 @@ export {
   setFlex,
   setLinearBcg,
   setImgBcg,
+  convertHexToRGBA,
   setLetterSpacing,
   setBorder,
   setRadius,
